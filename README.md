@@ -1,6 +1,7 @@
 ## Adguard Home + unbound + redis
 
 [Adguard Home](https://github.com/AdguardTeam/AdGuardHome) uses [unbound](https://unbound.docs.nlnetlabs.nl/en/latest/) as upstream DNS server with prefetch turned on. 
+
 Unbound uses [redis-server](https://redis.io/docs/latest/get-started/) as in-memory data cache.
 
 
