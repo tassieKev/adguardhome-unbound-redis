@@ -35,7 +35,7 @@ The default credentials for Adguard Home: admin/admin
 The default port for the Adguard Home WebGUI: 3000  
 (You can change both in the config/AdGuardHome/AdGuardHome.yaml)
 
-By default, configuration files are located in /mnt/user/appdata/adguard-unbound-redis/ in the following sub-directories:  
+By default, configuration files are located in /mnt/user/appdata/adguard-unbound-redis/ in the following subdirectories:  
  
 <table><tbody><tr><td>/redis</td><td>config files for redis</td></tr><tr><td>/AdGuardHome</td><td>config file for ADGH</td></tr><tr><td>/unbound</td><td>config file for unbound</td></tr><tr><td>/data</td><td>working folder for ADGH</td></tr></tbody></table>
 
