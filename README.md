@@ -6,19 +6,19 @@
 ### Why
 ---
 
-When you enable prefetching in Unbound, it pre-emptively resolves and caches DNS queries before they are actually requested by clients1. This can significantly speed up DNS resolution times because the answers are already in the cache when needed1.
+When you enable prefetching in Unbound, it pre-emptively resolves and caches DNS queries before they are actually requested by clients. This can significantly speed up DNS resolution times because the answers are already in the cache when needed.
 
 #### **Advantages of Unbound with prefetching:**
 
-1.  **Faster DNS Resolution**: By having frequently accessed DNS records pre-fetched and cached, the response time for these queries is reduced1.
-2.  **Reduced Latency**: Prefetching minimizes the delay caused by DNS lookups, which is especially beneficial for applications requiring quick access to DNS records1.
+1.  **Faster DNS Resolution**: By having frequently accessed DNS records pre-fetched and cached, the response time for these queries is reduced.
+2.  **Reduced Latency**: Prefetching minimizes the delay caused by DNS lookups, which is especially beneficial for applications requiring quick access to DNS records.
 3.  **Improved Performance**: Overall, prefetching can enhance the performance of your network by ensuring that DNS responses are readily available
 
 #### Advantage of redis-server:
 
-1.  **Reduced Latency**: Redis is an in-memory data store, which means it can serve DNS query results much faster than disk-based caching systems1. This can significantly reduce the latency of DNS queries1.
-2.  **Improved Performance**: By caching DNS query results in Redis, Unbound can handle queries more efficiently, leading to improved overall performance1.
-3.  **Reduced Load on Upstream DNS Servers**: With Redis caching frequently accessed DNS records, the number of queries sent to upstream DNS servers is reduced, which can help in lowering the load on these servers1.
+1.  **Reduced Latency**: Redis is an in-memory data store, which means it can serve DNS query results much faster than disk-based caching systems1. This can significantly reduce the latency of DNS queries.
+2.  **Improved Performance**: By caching DNS query results in Redis, Unbound can handle queries more efficiently, leading to improved overall performance.
+3.  **Reduced Load on Upstream DNS Servers**: With Redis caching frequently accessed DNS records, the number of queries sent to upstream DNS servers is reduced, which can help in lowering the load on these servers.
 4.  **Enhanced Reliability**: Redis can provide a reliable caching layer, ensuring that DNS query results are quickly accessible even during high traffic periods  
       
      
