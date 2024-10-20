@@ -44,6 +44,6 @@ You can change this in `forward-queries.conf` . Other servers are pre-defined in
 If you want it to do the resolution itself (recursive), simply delete the file.
 
 #### Blocklists enabled by default:
-- [AdGuard DNS filter{(https://github.com/AdguardTeam/AdguardSDNSFilter)
+- [AdGuard DNS filter](https://github.com/AdguardTeam/AdguardSDNSFilter)
 - [HaGeZi's Threat Intelligence Feeds Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#tif)
 - [HaGeZi's Multi Pro DNS Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#pro)
