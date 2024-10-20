@@ -42,3 +42,8 @@ By default, configuration files are located in /mnt/user/appdata/adguard-unbound
 unbound is configured to forward all requests to public dns. By default, Coudflare DNS are selected.
 You can change this in `forward-queries.conf` . Other servers are pre-defined in this file, and you can add others.
 If you want it to do the resolution itself (recursive), simply delete the file.
+
+#### Blocklist enabled by default:
+- [AdGuard DNS filter{(https://github.com/AdguardTeam/AdguardSDNSFilter)
+- [HaGeZi's Threat Intelligence Feeds Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#tif)
+- [HaGeZi's Multi Pro DNS Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#pro)
