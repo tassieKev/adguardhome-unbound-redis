@@ -29,7 +29,7 @@ When you enable prefetching in Unbound, it pre-emptively resolves and caches DNS
 ---
 
 This docker was created for unraid.  
-You must use this docker with a dedicated IP or network, because the port 53 is used already used by unraid/docker by default.
+You must use this docker with a dedicated IP or network, because the port 53 is already used by unraid/docker by default.
 
 The default credentials for Adguard Home: admin/admin  
 The default port for the Adguard Home WebGUI: 3000  
