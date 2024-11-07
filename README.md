@@ -1,4 +1,6 @@
 ## Adguard Home + unbound + redis
+![Docker Pulls](https://img.shields.io/docker/pulls/imthai/adguardhome-unbound-redis)
+![Docker Stars](https://img.shields.io/docker/stars/imthai/adguardhome-unbound-redis)
 
 [Adguard Home](https://github.com/AdguardTeam/AdGuardHome) uses [unbound](https://unbound.docs.nlnetlabs.nl/en/latest/) as upstream DNS server with prefetch turned on. 
 
