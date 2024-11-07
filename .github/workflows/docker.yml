@@ -55,4 +55,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/imthai//adguardhome-unbound-redis:latest
+          tags: ghcr.io/imthai/adguardhome-unbound-redis:latest
