@@ -1,51 +1,64 @@
-## Adguard Home + unbound + redis
+# 🚀 AdGuard Home + Unbound + Redis
+
 ![Docker Pulls](https://img.shields.io/docker/pulls/imthai/adguardhome-unbound-redis)
 ![Docker Stars](https://img.shields.io/docker/stars/imthai/adguardhome-unbound-redis)
 
-[Adguard Home](https://github.com/AdguardTeam/AdGuardHome) uses [unbound](https://unbound.docs.nlnetlabs.nl/en/latest/) as upstream DNS server with prefetch turned on. 
+A Docker container combining [AdGuard Home](https://github.com/AdguardTeam/AdGuardHome), [Unbound](https://unbound.docs.nlnetlabs.nl/en/latest/) (with DNS prefetching), and [Redis](https://redis.io/docs/latest/get-started/) as an in-memory caching layer — built for speed, privacy, and performance.
 
-Unbound uses [redis-server](https://redis.io/docs/latest/get-started/) as in-memory data cache.
-
-
-### Why
 ---
 
-When you enable prefetching in Unbound, it pre-emptively resolves and caches DNS queries before they are actually requested by clients. This can significantly speed up DNS resolution times because the answers are already in the cache when needed.
+## 🔍 Why This Setup?
 
-#### **Advantages of Unbound with prefetching:**
+### ✅ Benefits of Unbound with Prefetching:
+- **Faster DNS Resolution**: Frequently accessed DNS records are proactively resolved and cached.
+- **Lower Latency**: Reduces delays caused by DNS lookups, especially useful for latency-sensitive applications.
+- **Better Network Performance**: Prefetched responses are immediately available, reducing wait times.
 
-1.  **Faster DNS Resolution**: By having frequently accessed DNS records pre-fetched and cached, the response time for these queries is reduced.
-2.  **Reduced Latency**: Prefetching minimizes the delay caused by DNS lookups, which is especially beneficial for applications requiring quick access to DNS records.
-3.  **Improved Performance**: Overall, prefetching can enhance the performance of your network by ensuring that DNS responses are readily available
+### 🧠 Benefits of Using Redis:
+- **In-Memory Speed**: Redis caches DNS results in memory, offering near-instant retrieval.
+- **Improved Throughput**: Offloads repetitive DNS requests from upstream servers.
+- **Reduced Load**: Minimizes the number of external DNS queries.
+- **Reliable Caching**: Maintains fast access even under heavy load.
 
-#### Advantage of redis-server:
-
-1.  **Reduced Latency**: Redis is an in-memory data store, which means it can serve DNS query results much faster than disk-based caching systems1. This can significantly reduce the latency of DNS queries.
-2.  **Improved Performance**: By caching DNS query results in Redis, Unbound can handle queries more efficiently, leading to improved overall performance.
-3.  **Reduced Load on Upstream DNS Servers**: With Redis caching frequently accessed DNS records, the number of queries sent to upstream DNS servers is reduced, which can help in lowering the load on these servers.
-4.  **Enhanced Reliability**: Redis can provide a reliable caching layer, ensuring that DNS query results are quickly accessible even during high traffic periods  
-      
-     
-
-### Usage
 ---
 
-This docker was created for unraid.  
-You must use this docker with a dedicated IP or network, because the port 53 is already used by unraid/docker by default.
+## 🛠️ Usage
 
-The default credentials for Adguard Home: admin/admin  
-The default port for the Adguard Home WebGUI: 3000  
-(You can change both in the config/AdGuardHome/AdGuardHome.yaml)
+> This container is tailored for **Unraid**.  
+> Make sure to assign a **dedicated IP** or use a **custom Docker network**, as port `53` is typically occupied by Docker/Unraid by default.
 
-By default, configuration files are located in /mnt/user/appdata/adguard-unbound-redis/ in the following subdirectories:  
- 
-<table><tbody><tr><td>/redis</td><td>config files for redis</td></tr><tr><td>/AdGuardHome</td><td>config file for ADGH</td></tr><tr><td>/unbound</td><td>config file for unbound</td></tr><tr><td>/data</td><td>working folder for ADGH</td></tr></tbody></table>
+### ⚙️ Default Settings:
+- **AdGuard Home Web UI**: `http://<your-ip>:3000`
+- **Default credentials**: `admin` / `admin`
+- Configuration files are located at:  
+  `/mnt/user/appdata/adguard-unbound-redis/`
 
-unbound is configured to forward all requests to public dns. By default, Coudflare DNS are selected.
-You can change this in `forward-queries.conf` . Other servers are pre-defined in this file, and you can add others.
-If you want it to do the resolution itself (recursive), simply delete the file.
+| Directory       | Description                         |
+|----------------|-------------------------------------|
+| `/redis`        | Redis configuration files           |
+| `/AdGuardHome`  | AdGuard Home config (`AdGuardHome.yaml`) |
+| `/unbound`      | Unbound configuration files         |
+| `/data`         | Working directory for AdGuard Home  |
 
-#### Blocklists enabled by default:
-- [AdGuard DNS filter](https://github.com/AdguardTeam/AdguardSDNSFilter)
-- [HaGeZi's Threat Intelligence Feeds Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#tif)
-- [HaGeZi's Multi Pro DNS Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#pro)
+---
+
+## 🌐 DNS Configuration
+
+By default, Unbound is set to forward all DNS requests to **public resolvers**.  
+Currently, **Cloudflare DNS** is used.
+
+- You can modify this behavior in the `forward-queries.conf` file.
+- Other DNS providers are pre-defined and can be customized or added.
+- To enable **full recursive resolution**, simply **delete** the `forward-queries.conf` file.
+
+---
+
+## 🚫 Blocklists Enabled by Default
+
+- [AdGuard DNS Filter](https://github.com/AdguardTeam/AdguardSDNSFilter)
+- [HaGeZi's Threat Intelligence Feeds](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#tif)
+- [HaGeZi's Multi PRO Blocklist](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#pro)
+
+---
+
+Enjoy faster, smarter, and more private DNS with this all-in-one Docker solution! 🛡️⚡
