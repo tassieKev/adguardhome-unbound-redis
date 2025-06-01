@@ -47,7 +47,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          push: true
+          #push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/adguardhome-unbound-redis:latest
 
       - name: Build and push Docker image to GitHub Packages
