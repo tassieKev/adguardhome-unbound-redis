@@ -1,16 +1,14 @@
 name: Build and Push Docker image
 
 on:
-  push:
-    branches: 
-      - main
+  workflow_dispatch: # Allows manual triggering
+
   pull_request:
     branches: 
       - main
+
   repository_dispatch:
     types: [trigger-build]
-  workflow_dispatch: # Allows manual triggering
-
 
 jobs:
   build:
@@ -47,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          #push: true
+          push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/adguardhome-unbound-redis:latest
 
       - name: Build and push Docker image to GitHub Packages
