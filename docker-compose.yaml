@@ -1,0 +1,11 @@
+# Requires image available locally
+
+services:
+    adguardhome-unbound-redis:
+        image: my_adguard:latest
+        network_mode: "host"
+        environment:
+            - TZ=Australia/Hobart #change to suit local conditions
+        restart: unless-stopped
+        volumes:
+            - /home/<my directory>/adguard_data:/config
