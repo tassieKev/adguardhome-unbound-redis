@@ -1,4 +1,4 @@
-Attempt to make a arm version that I can run on a RaspberryPi.
+Attempt to make a version that I can run on a RaspberryPi.
 
 To build
 
