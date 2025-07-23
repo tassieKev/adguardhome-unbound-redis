@@ -1,4 +1,4 @@
-Attempt to make a arm version so I can run the same image on RaspberryPo and Unraid.
+Attempt to make a arm version that I can run on a RaspberryPi.
 
 To build
 
